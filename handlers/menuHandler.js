@@ -4,7 +4,10 @@ const path = require("path");
 module.exports = (client) => {
   const menusPath = path.join(__dirname, "..", "menus");
 
-  if (!fs.existsSync(menusPath)) return;
+  if (!fs.existsSync(menusPath)) {
+    console.log("[MENU] menus folder not found");
+    return;
+  }
 
   const menuFiles = fs.readdirSync(menusPath).filter(file => file.endsWith(".js"));
 
