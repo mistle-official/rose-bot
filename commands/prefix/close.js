@@ -42,7 +42,7 @@ module.exports = {
       "components": [
         {
           "type": 10,
-          "content": "<a:sea_loading:1466357864477098014> Closing ticket..."
+          "content": "<a:rose_loading:1488093350933561354> Closing ticket..."
         },
         {
           "type": 14,
