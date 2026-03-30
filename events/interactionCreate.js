@@ -8,6 +8,7 @@ module.exports = {
         if (!command) return;
 
         await command.execute(interaction);
+        return;
       }
 
       // Buttons
@@ -16,6 +17,16 @@ module.exports = {
         if (!button) return;
 
         await button.execute(interaction);
+        return;
+      }
+
+      // Select Menus
+      if (interaction.isStringSelectMenu()) {
+        const menu = client.menus.get(interaction.customId);
+        if (!menu) return;
+
+        await menu.execute(interaction);
+        return;
       }
 
       // Modals
@@ -24,18 +35,20 @@ module.exports = {
         if (!modal) return;
 
         await modal.execute(interaction);
+        return;
       }
+
     } catch (error) {
-      console.error(`interactionCreate error:`, error);
+      console.error(error);
 
       if (interaction.replied || interaction.deferred) {
         await interaction.followUp({
-          content: "There was an error while processing this interaction.",
+          content: "<:rose_xMark:1488048189255716945> An **error** occurred while processing this interaction.",
           ephemeral: true
         }).catch(() => {});
       } else {
         await interaction.reply({
-          content: "There was an error while processing this interaction.",
+          content: "<:rose_xMark:1488048189255716945> An **error** occurred while processing this interaction.",
           ephemeral: true
         }).catch(() => {});
       }

@@ -14,10 +14,12 @@ client.prefixCommands = new Collection();
 client.slashCommands = new Collection();
 client.buttons = new Collection();
 client.modals = new Collection();
+client.menus = new Collection();
 
 require("./handlers/commandHandler")(client);
 require("./handlers/buttonHandler")(client);
 require("./handlers/modalHandler")(client);
+require("./handlers/menuHandler")(client);
 require("./handlers/eventHandler")(client);
 
 client.login(process.env.DISCORD_TOKEN);
