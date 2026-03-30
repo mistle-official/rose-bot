@@ -17,11 +17,17 @@ module.exports = {
       }
 
       if (interaction.isStringSelectMenu()) {
-        const menu = client.menus.get(interaction.customId);
-        if (!menu) return;
-        await menu.execute(interaction);
-        return;
-      }
+  console.log("MENU CLICKED:", interaction.customId, interaction.values);
+
+  const menu = client.menus.get(interaction.customId);
+  if (!menu) {
+    console.log("MENU NOT FOUND:", interaction.customId);
+    return;
+  }
+
+  await menu.execute(interaction);
+  return;
+}
 
       if (interaction.isModalSubmit()) {
         const modal = client.modals.get(interaction.customId);

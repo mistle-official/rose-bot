@@ -6,7 +6,7 @@ module.exports = {
 
     if (selected === "Ba8dJzTxSI") {
       return interaction.reply({
-  "flags": 32768,
+  "flags": 32832,
   "components": [
     {
       "type": 17,
@@ -37,7 +37,7 @@ module.exports = {
 
     if (selected === "guaYRHQgON") {
       return interaction.reply({
-  "flags": 32768,
+  "flags": 32832,
   "components": [
     {
       "type": 17,
