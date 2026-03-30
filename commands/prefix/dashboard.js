@@ -1,5 +1,5 @@
 module.exports = {
-  name: "group",
+  name: "dashboard",
 
   async execute(message, args) {
 
