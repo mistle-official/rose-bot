@@ -102,7 +102,7 @@ module.exports = {
 
     } catch (error) {
       console.error("FUNDS ERROR:", error.response?.data || error);
-      await message.channel.send("<:rose_xMark:1488048189255716945> Filed to fetch **group** funds.");
+      await message.channel.send("<:rose_xMark:1488048189255716945> Failed to fetch **group** funds.");
     }
   }
 };
