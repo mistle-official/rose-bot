@@ -44,14 +44,16 @@ module.exports = {
       });
     }
 
-    const target = message.guild.members.cache.get(userId);
+    let target;
 
-    if (!target) {
-      return message.reply({
-        content: "<:rose_xMark:1488048189255716945> **Failed** to cache user.",
-        allowedMentions: { repliedUser: false }
-      });
-    }
+try {
+  target = await message.guild.members.fetch(userId);
+} catch {
+  return message.reply({
+    content: "<:rose_xMark:1488048189255716945> **Failed** to fetch user.",
+    allowedMentions: { repliedUser: false }
+  });
+}
 
     try {
 
