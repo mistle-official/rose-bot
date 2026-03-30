@@ -8,7 +8,7 @@ module.exports = {
 
   async execute(interaction) {
     const CATEGORY_ID = "1488039764157534218";
-    const STAFF_ROLE_IDS = ["1488071288970023035", "1488033004562677930"];
+    const STAFF_ROLE_IDS = ["1488033004562677930", "1488071288970023035"];
 
     const reason = interaction.fields.getTextInputValue("help_reason");
 
@@ -92,7 +92,7 @@ module.exports = {
             },
             {
               "type": 10,
-              "content": `A support ticket has been opened. Ensure to follow the guidelines listed below to avoid ticket closer.\n\n**Ticket Guidelines**\n- Do not ping anyone; staff have already been notified\n- Remain respectful within your ticket\n- Remain active within your ticket\n\n**Inquiry**\n${reason}`
+              "content": `A support ticket has been opened. Ensure to follow the guidelines listed below to avoid ticket closure.\n\n**Ticket Guidelines**\n- Do not ping anyone; staff have already been notified\n- Remain respectful within your ticket\n- Remain active within your ticket\n\n**Inquiry**\n${reason}`
             },
             {
               "type": 14,
