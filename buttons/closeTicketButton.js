@@ -27,6 +27,7 @@ module.exports = {
 
       await interaction.reply({
   "flags": 32768,
+  ephemeral: true,
   "components": [
     {
       "type": 17,

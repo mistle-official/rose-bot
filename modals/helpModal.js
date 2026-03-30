@@ -8,7 +8,7 @@ module.exports = {
 
   async execute(interaction) {
     const CATEGORY_ID = "1488039764157534218";
-    const STAFF_ROLE_IDS = ["1488033004562677930", "1488071288970023035"];
+    const STAFF_ROLE_IDS = ["1488071288970023035", "1488033004562677930"];
 
     const reason = interaction.fields.getTextInputValue("help_reason");
 
@@ -27,44 +27,77 @@ module.exports = {
       });
     }
 
+    const staffRoles = STAFF_ROLE_IDS
+      .map(roleId => interaction.guild.roles.cache.get(roleId))
+      .filter(role => role);
+
+    console.log("Resolved roles:", staffRoles.map(r => `${r.name} (${r.id})`));
+
+    const overwrites = [
+      {
+        id: interaction.guild.id,
+        deny: [PermissionFlagsBits.ViewChannel]
+      },
+      {
+        id: interaction.user.id,
+        allow: [
+          PermissionFlagsBits.ViewChannel,
+          PermissionFlagsBits.SendMessages,
+          PermissionFlagsBits.ReadMessageHistory,
+          PermissionFlagsBits.AttachFiles,
+          PermissionFlagsBits.EmbedLinks
+        ]
+      },
+      ...staffRoles.map(role => ({
+        id: role.id,
+        allow: [
+          PermissionFlagsBits.ViewChannel,
+          PermissionFlagsBits.SendMessages,
+          PermissionFlagsBits.ReadMessageHistory,
+          PermissionFlagsBits.AttachFiles,
+          PermissionFlagsBits.EmbedLinks,
+          PermissionFlagsBits.ManageChannels
+        ]
+      }))
+    ];
+
     const channel = await interaction.guild.channels.create({
       name: `support-${username}`,
       type: ChannelType.GuildText,
       parent: CATEGORY_ID,
       topic: interaction.user.id,
-      permissionOverwrites: [
-        {
-          id: interaction.guild.id,
-          deny: [PermissionFlagsBits.ViewChannel]
-        },
-        {
-          id: interaction.user.id,
-          allow: [
-            PermissionFlagsBits.ViewChannel,
-            PermissionFlagsBits.SendMessages,
-            PermissionFlagsBits.ReadMessageHistory,
-            PermissionFlagsBits.AttachFiles,
-            PermissionFlagsBits.EmbedLinks
-          ]
-        },
-        ...STAFF_ROLE_IDS.map(roleId => ({
-          id: roleId,
-          allow: [
-            PermissionFlagsBits.ViewChannel,
-            PermissionFlagsBits.SendMessages,
-            PermissionFlagsBits.ReadMessageHistory,
-            PermissionFlagsBits.AttachFiles,
-            PermissionFlagsBits.EmbedLinks,
-            PermissionFlagsBits.ManageChannels
-          ]
-        }))
-      ]
+      permissionOverwrites: overwrites
     });
 
     await interaction.reply({
-      content: `<:rose_check:1488048137355526304> Your **ticket** has been created: ${channel}`,
-      flags: 64
-    });
+  ephemeral: true,
+  "flags": 32768,
+  "components": [
+    {
+      "type": 17,
+      "components": [
+        {
+          "type": 10,
+          "content": "<:rose_check:1488048137355526304> Your ticket has been created successfully: ${channel}"
+        },
+        {
+          "type": 14,
+          "spacing": 2
+        },
+        {
+          "type": 12,
+          "items": [
+            {
+              "media": {
+                "url": "https://media.discordapp.net/attachments/1488043526448218233/1488044260874780712/Screenshot_2026-03-29_221112.png?ex=69cb58b6&is=69ca0736&hm=8fc5e7f9fb255acf0b6e195484f7bf8d33021eb9cbf0176eda72aa47c588a448&=&format=webp&quality=lossless"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+});
 
     await channel.send({
       "flags": 32768,
