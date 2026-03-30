@@ -8,7 +8,7 @@ module.exports = {
 
   async execute(interaction) {
     const CATEGORY_ID = "1488039764157534218";
-    const STAFF_ROLE_IDS = ["1488071288970023035", "1488033004562677930"]
+    const STAFF_ROLE_IDS = ["1488071288970023035", "1488033004562677930"];
 
     const reason = interaction.fields.getTextInputValue("help_reason");
 
@@ -23,7 +23,7 @@ module.exports = {
     if (existing) {
       return interaction.reply({
         content: `<:rose_xMark:1488048189255716945> You already have an open **ticket**: ${existing}`,
-        ephemeral: true
+        flags: 64
       });
     }
 
@@ -47,8 +47,8 @@ module.exports = {
             PermissionFlagsBits.EmbedLinks
           ]
         },
-        {
-          id: STAFF_ROLE_IDS,
+        ...STAFF_ROLE_IDS.map(roleId => ({
+          id: roleId,
           allow: [
             PermissionFlagsBits.ViewChannel,
             PermissionFlagsBits.SendMessages,
@@ -57,64 +57,64 @@ module.exports = {
             PermissionFlagsBits.EmbedLinks,
             PermissionFlagsBits.ManageChannels
           ]
-        }
+        }))
       ]
     });
 
     await interaction.reply({
       content: `<:rose_check:1488048137355526304> Your **ticket** has been created: ${channel}`,
-      ephemeral: true
+      flags: 64
     });
 
     await channel.send({
-  "flags": 32768,
-  "components": [
-    {
-      "type": 17,
+      "flags": 32768,
       "components": [
         {
-          "type": 12,
-          "items": [
-            {
-              "media": {
-                "url": "https://media.discordapp.net/attachments/1488043526448218233/1488091891126767656/image.png?ex=69cb8512&is=69ca3392&hm=140e1b168b6c1679050eea995554191eb1ce4fbfb1ff2fa50015338e60ea2395&=&format=webp&quality=lossless&width=550&height=187"
-              }
-            }
-          ]
-        },
-        {
-          "type": 10,
-          "content": `@everyone | <@${interaction.user.id}>`
-        },
-        {
-          "type": 14,
-          "spacing": 2
-        },
-        {
-          "type": 10,
-          "content": `A support ticket has been opened. Ensure to follow the guidelines listed below to avoid ticket closer.\n\n**Ticket Guidelines**\n- Do not ping anyone; staff have already been notified\n- Remain respectful within your ticket\n- Remain active within your ticket\n\n**Inquiry**\n${reason}`
-        },
-        {
-          "type": 14,
-          "divider": false
-        },
-        {
-          "type": 1,
+          "type": 17,
           "components": [
             {
-              "style": 4,
-              "type": 2,
-              "label": "Close",
-              "flow": {
-                "actions": []
-              },
-              "custom_id": "p_285689439538122754"
+              "type": 12,
+              "items": [
+                {
+                  "media": {
+                    "url": "https://media.discordapp.net/attachments/1488043526448218233/1488091891126767656/image.png?ex=69cb8512&is=69ca3392&hm=140e1b168b6c1679050eea995554191eb1ce4fbfb1ff2fa50015338e60ea2395&=&format=webp&quality=lossless&width=550&height=187"
+                  }
+                }
+              ]
+            },
+            {
+              "type": 10,
+              "content": `@everyone | <@${interaction.user.id}>`
+            },
+            {
+              "type": 14,
+              "spacing": 2
+            },
+            {
+              "type": 10,
+              "content": `A support ticket has been opened. Ensure to follow the guidelines listed below to avoid ticket closer.\n\n**Ticket Guidelines**\n- Do not ping anyone; staff have already been notified\n- Remain respectful within your ticket\n- Remain active within your ticket\n\n**Inquiry**\n${reason}`
+            },
+            {
+              "type": 14,
+              "divider": false
+            },
+            {
+              "type": 1,
+              "components": [
+                {
+                  "style": 4,
+                  "type": 2,
+                  "label": "Close",
+                  "flow": {
+                    "actions": []
+                  },
+                  "custom_id": "p_285689439538122754"
+                }
+              ]
             }
           ]
         }
       ]
-    }
-  ]
-});
+    });
   }
 };
