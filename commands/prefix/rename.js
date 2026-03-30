@@ -42,22 +42,34 @@ module.exports = {
     try {
       await message.channel.setName(newName);
 
-      await message.delete().catch(() => {});
-
-      await message.channel.send({
-        "flags": 32768,
-        "components": [
-          {
-            "type": 17,
-            "components": [
-              {
-                "type": 10,
-                "content": `This **ticket** has been renamed to \`${newName}\`.`
+      await message.reply({
+  "flags": 32768,
+  "components": [
+    {
+      "type": 17,
+      "components": [
+        {
+          "type": 10,
+          "content": `<:rose_check:1488048137355526304> Successfully renamed ticket to \`${newName}\`.`
+        },
+        {
+          "type": 14,
+          "spacing": 2
+        },
+        {
+          "type": 12,
+          "items": [
+            {
+              "media": {
+                "url": "https://media.discordapp.net/attachments/1488043526448218233/1488044260874780712/Screenshot_2026-03-29_221112.png?ex=69cb58b6&is=69ca0736&hm=8fc5e7f9fb255acf0b6e195484f7bf8d33021eb9cbf0176eda72aa47c588a448&=&format=webp&quality=lossless"
               }
-            ]
-          }
-        ]
-      });
+            }
+          ]
+        }
+      ]
+    }
+  ]
+});
     } catch (err) {
       console.error(err);
 
