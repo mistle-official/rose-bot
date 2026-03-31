@@ -4,7 +4,7 @@ const {
 } = require("discord.js");
 
 module.exports = {
-  customId: "YOUR_CLAIM_BUTTON_ID",
+  customId: "p_286010368373821442",
 
   async execute(interaction) {
     const CATEGORY_ID = "1488415049713324032";
