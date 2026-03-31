@@ -70,7 +70,7 @@ module.exports = {
       courseRoleId
     ]);
 
-    const logChannel = message.guild.channels.cach.get(LOG_CHANNEL_ID);
+    const logChannel = message.guild.channels.cache.get(LOG_CHANNEL_ID);
     if (!channel) return;
 
     await logChannel.send({
