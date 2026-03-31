@@ -7,7 +7,7 @@ module.exports = {
     const STAFF_ROLE_IDS = ["1466269101260411013", "1466310900121337856"];
 
     const isAdmin = message.member.permissions.has("Administrator");
-    const hasRole = message.member.roles.cache.has(REQUIRED_ROLE_ID);
+    const hasRole = message.member.roles.cache.has(STAFF_ROLE_IDS);
 
     if (!isAdmin && !hasRole) {
       return message.reply({
