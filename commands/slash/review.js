@@ -50,11 +50,11 @@ module.exports = {
 
     const REQUIRED_ROLE_ID = "1488033235215585361";
 
-        const isAdmin = message.member.permissions.has("Administrator");
-    const hasRole = message.member.roles.cache.has(REQUIRED_ROLE_ID);
+        const isAdmin = interaction.member.permissions.has("Administrator");
+    const hasRole = interaction.member.roles.cache.has(REQUIRED_ROLE_ID);
 
     if (!isAdmin && !hasRole) {
-      return message.reply("<:rose_xMark:1488048189255716945> You must be a **customer** to **leave** a review.");
+      return interaction.reply("<:rose_xMark:1488048189255716945> You must be a **customer** to **leave** a review.");
     }
     
     const designer = interaction.options.getUser("designer");
