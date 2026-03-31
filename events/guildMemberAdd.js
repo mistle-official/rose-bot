@@ -41,8 +41,8 @@ module.exports = {
           "type": 2,
           "label": `${member.guild.memberCount}`,
           "emoji": {
-            "id": "1488048239797338215",
-            "name": "rose_person",
+            "id": "1487233809614372945",
+            "name": "rose_Person",
             "animated": false
           },
           "disabled": true,
@@ -55,7 +55,7 @@ module.exports = {
           "type": 2,
           "style": 5,
           "label": "Dashboard",
-          "url": "https://discohook.app",
+          "url": "https://discord.com/channels/1317959017888354467/1452801176851583048",
         }
       ]
     }
