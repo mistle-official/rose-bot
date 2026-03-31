@@ -31,11 +31,11 @@ module.exports = {
         .setDescription("Select the rating of your order experience.")
         .setRequired(true)
         .addChoices(
-          { name: "<:rose_star:1488209094316789832>", value: "<:rose_star:1488209094316789832>" },
-          { name: "<:rose_star:1488209094316789832><:rose_star:1488209094316789832>", value: "<:rose_star:1488209094316789832><:rose_star:1488209094316789832>" },
-          { name: "<:rose_star:1488209094316789832><:rose_star:1488209094316789832><:rose_star:1488209094316789832>", value: "<:rose_star:1488209094316789832><:rose_star:1488209094316789832><:rose_star:1488209094316789832>" },
-          { name: "<:rose_star:1488209094316789832><:rose_star:1488209094316789832><:rose_star:1488209094316789832><:rose_star:1488209094316789832>", value: "<:rose_star:1488209094316789832><:rose_star:1488209094316789832><:rose_star:1488209094316789832><:rose_star:1488209094316789832>" },
-          { name: "<:rose_star:1488209094316789832><:rose_star:1488209094316789832><:rose_star:1488209094316789832><:rose_star:1488209094316789832><:rose_star:1488209094316789832>", value: "<:rose_star:1488209094316789832><:rose_star:1488209094316789832><:rose_star:1488209094316789832><:rose_star:1488209094316789832><:rose_star:1488209094316789832>" }
+          { name: "⭐", value: "⭐" },
+          { name: "⭐⭐", value: "⭐⭐" },
+          { name: "⭐⭐⭐", value: "⭐⭐⭐" },
+          { name: "⭐⭐⭐⭐", value: "⭐⭐⭐⭐" },
+          { name: "⭐⭐⭐⭐⭐", value: "⭐⭐⭐⭐⭐" }
         )
     )
 
