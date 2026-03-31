@@ -27,7 +27,7 @@ module.exports = {
         },
         {
           "type": 10,
-          "content": "Welcome to **.rose** — an ER:LC design server focused on providing top-notch products for each customer at affordable prices. We offer multiple services. Our creative time is filled with many talented designers to ensure the quality of the products sent to customers.\n\n**Services**\n- Graphics —  Logos & Banners\n- Clothing\n- Liveries\n- Discord — Servers, Embeds, & More\n- Development\n"
+          "content": "Welcome to **.rose** — an ER:LC design server focused on providing top-notch products for each customer at affordable prices. We offer multiple services. Our creative time is filled with many talented designers to ensure the quality of the products sent to customers.\n\n**Services**\n- Graphics —  Logos & Banners\n- Clothing\n- Liveries\n- Discord — Servers, Embeds, & More\n- Development\n\n **Executive Team**\n- <@1488026089371598898>\n- <@1311188604521021453>\n- <@1325716260763336786>"
         }
       ]
     }
