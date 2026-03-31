@@ -16,7 +16,7 @@ module.exports = {
           "items": [
             {
               "media": {
-                "url": "https://media.discordapp.net/attachments/1488043526448218233/1488044070659162293/Screenshot_2026-03-29_220919.png?ex=69cb5888&is=69ca0708&hm=ec567fd6b803fec8684c0ca5eeb4e3d4f20c1f8a15ee49a6ca99d2d5b5e3ae65&=&format=webp&quality=lossless&width=550&height=187"
+                "url": "https://media.discordapp.net/attachments/1488365406069588159/1488367048471089235/Screenshot_2026-03-29_220919.png?ex=69cc8554&is=69cb33d4&hm=9e0a3c644461a99241f66edc15da14517388ec132b31535499941eec04b386df&=&format=webp&quality=lossless"
               }
             }
           ]
@@ -47,7 +47,7 @@ module.exports = {
           "items": [
             {
               "media": {
-                "url": "https://media.discordapp.net/attachments/1488043526448218233/1488044057187061871/Screenshot_2026-03-29_220909.png?ex=69cb5885&is=69ca0705&hm=c7790e0c08a4931b2cfa9b4e97cd5715456f5c3058513e7d5172ea317cb2a00e&=&format=webp&quality=lossless&width=1872&height=637"
+                "url": "https://media.discordapp.net/attachments/1488365406069588159/1488367021102993519/Screenshot_2026-03-29_220909.png?ex=69cc854e&is=69cb33ce&hm=d9187199047c34a8de67a213907f76eaca9ebf17839dc0b40df0e53671e2141d&=&format=webp&quality=lossless"
               }
             }
           ]
