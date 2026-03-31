@@ -112,7 +112,7 @@ module.exports = {
     });
 
     try {
-      await designer.send(`<:rose_arrow:1488072734788419625> You have received a review from ${interaction.user}, a recent client you completed an order for.`);
+      await designer.send(`<:rose_arrow:1488072734788419625>You have received a review from ${interaction.user}, a recent client you completed an order for.`);
     } catch {}
 
     await interaction.reply({
