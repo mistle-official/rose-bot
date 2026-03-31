@@ -1,5 +1,5 @@
 module.exports = {
-  name: "dashboard",
+  name: "store",
 
   async execute(message, args) {
 

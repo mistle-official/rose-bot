@@ -73,8 +73,7 @@ const overwrites = [
     });
 
     await interaction.reply({
-  ephemeral: true,
-  "flags": 32768,
+  "flags": 32832,
   "components": [
     {
       "type": 17,
