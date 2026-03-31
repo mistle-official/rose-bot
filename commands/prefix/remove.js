@@ -53,7 +53,7 @@ module.exports = {
     ];
 
     // 🔹 LOG CHANNEL
-    const LOG_CHANNEL_ID = "1488041322076967055";
+    const LOG_CHANNEL_ID = "1487544231617630209";
 
     const isAdmin = message.member.permissions.has("Administrator");
     const hasRole = message.member.roles.cache.has(REQUIRED_ROLE_ID);

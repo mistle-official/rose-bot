@@ -7,8 +7,8 @@ module.exports = {
   customId: "help_modal",
 
   async execute(interaction) {
-    const CATEGORY_ID = "1488039764157534218";
-    const STAFF_ROLE_IDS = ["1488071288970023035", "1488033004562677930"];
+    const CATEGORY_ID = "1466318527609831525";
+    const STAFF_ROLE_IDS = ["1466269101260411013", "1466310900121337856"];
 
     const reason = interaction.fields.getTextInputValue("help_reason");
 

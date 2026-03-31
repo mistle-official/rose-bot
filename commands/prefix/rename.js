@@ -4,7 +4,7 @@ module.exports = {
   async execute(message, args) {
     if (message.author.bot) return;
 
-    const REQUIRED_ROLE_ID = "PUT_STAFF_ROLE_ID_HERE";
+    const STAFF_ROLE_IDS = ["1466269101260411013", "1466310900121337856"];
 
     const isAdmin = message.member.permissions.has("Administrator");
     const hasRole = message.member.roles.cache.has(REQUIRED_ROLE_ID);

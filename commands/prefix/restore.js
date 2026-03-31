@@ -20,10 +20,10 @@ module.exports = {
     if (message.author.bot) return;
 
     // 🔹 REQUIRED ROLE
-    const REQUIRED_ROLE_ID = "1488033004562677930";
+    const REQUIRED_ROLE_ID = "1466269101260411013";
 
     // 🔹 LOG CHANNEL
-    const LOG_CHANNEL_ID = "1488041322076967055";
+    const LOG_CHANNEL_ID = "1487544231617630209";
 
     const isAdmin = message.member.permissions.has("Administrator");
     const hasRole = message.member.roles.cache.has(REQUIRED_ROLE_ID);
