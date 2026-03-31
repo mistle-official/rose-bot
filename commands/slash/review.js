@@ -7,7 +7,7 @@ module.exports = {
 
     .addUserOption(option =>
         option
-        .setName("desiger")
+        .setName("designer")
         .setDescription("Select the designer who completed your order.")
         .setRequired(true)
     )
