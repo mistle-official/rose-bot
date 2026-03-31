@@ -9,14 +9,14 @@ module.exports = {
 
     if (!isAdmin && !hasRole) {
       return interaction.reply({
-        content: "<:rose_xMark:1488048189255716945> You do **not** have **permission** to use this button.",
+        content: "<:rose_xMark:1486977010143199382> You do **not** have **permission** to use this button.",
         flags: 64
       });
     }
 
     if (!interaction.channel.topic || !/^\d+$/.test(interaction.channel.topic)) {
       return interaction.reply({
-        content: "<:rose_xMark:1488048189255716945> This is not a valid **ticket** channel.",
+        content: "<:rose_xMark:1486977010143199382> You can **only** close a **ticket** channel.",
         flags: 64
       });
     }
@@ -67,7 +67,7 @@ module.exports = {
       "components": [
         {
           "type": 10,
-          "content": "<a:rose_loading:1488093350933561354> Closing ticket..."
+          "content": "<a:rose_loading:1466357864477098014> Closing ticket..."
         },
         {
           "type": 14,
@@ -97,12 +97,12 @@ module.exports = {
 
       if (interaction.replied || interaction.deferred) {
         await interaction.followUp({
-          content: "<:rose_xMark:1488048189255716945> An **error** occurred while attempting to close this ticket.",
+          content: "<:rose_xMark:1486977010143199382> An **error** occured.",
           flags: 64
         }).catch(() => {});
       } else {
         await interaction.reply({
-          content: "<:rose_xMark:1488048189255716945> An **error** occurred while attempting to close this ticket.",
+          content: "<:rose_xMark:1486977010143199382> An **error** occured.",
           flags: 64
         }).catch(() => {});
       }

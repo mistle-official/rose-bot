@@ -78,7 +78,7 @@ module.exports = {
       "components": [
         {
           "type": 10,
-          "content": `<:rose_check:1488048137355526304> Your ticket has been created successfully: ${channel}`
+          "content": `<:rose_Check:1486976983555379330> Your ticket has been created successfully: ${channel}`
         },
         {
           "type": 14,

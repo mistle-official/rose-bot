@@ -11,14 +11,14 @@ module.exports = {
 
     if (!isAdmin && !hasRole) {
       return message.reply({
-        content: "<:rose_xMark:1488048189255716945> You do **not** have **permission** to use this command.",
+        content: "<:rose_xMark:1486977010143199382> You do **not** have **permission** to use this command.",
         allowedMentions: { repliedUser: false }
       });
     }
 
     if (!message.channel.topic || !/^\d+$/.test(message.channel.topic)) {
       return message.reply({
-        content: "<:rose_xMark:1488048189255716945> This is not a valid **ticket** channel.",
+        content: "<:rose_xMark:1486977010143199382> You can **only** close a **ticket** channel.",
         allowedMentions: { repliedUser: false }
       });
     }
@@ -71,7 +71,7 @@ module.exports = {
       "components": [
         {
           "type": 10,
-          "content": "<a:rose_loading:1488093350933561354> Closing ticket..."
+          "content": "<a:rose_loading:1466357864477098014> Closing ticket..."
         },
         {
           "type": 14,
@@ -100,7 +100,7 @@ module.exports = {
       console.error(err);
 
       return message.reply({
-        content: "<:rose_xMark:1488048189255716945> An **error** occurred while attempting to close this ticket.",
+        content: "<:rose_xMark:1486977010143199382> An **error** occured.",
         allowedMentions: { repliedUser: false }
       });
     }

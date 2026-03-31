@@ -19,7 +19,7 @@ module.exports = {
       await command.execute(message, args, client);
     } catch (error) {
       console.error(`messageCreate error:`, error);
-      await message.reply("There was an error while running that command.").catch(() => {});
+      await message.reply("<:rose_xMark:1486977010143199382> An **error** occured.").catch(() => {});
     }
   }
 };

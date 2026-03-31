@@ -9,7 +9,7 @@ module.exports = {
     const hasRole = message.member.roles.cache.has(REQUIRED_ROLE_ID);
 
     if (!isAdmin && !hasRole) {
-      return message.reply("<:rose_xMark:1488048189255716945> You do **not** have **permission** to use this command.");
+      return message.reply("<:rose_xMark:1486977010143199382> You do **not** have **permission** to use this command.");
     }
     if (message.author.bot) return;
 

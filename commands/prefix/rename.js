@@ -18,14 +18,14 @@ module.exports = {
 
     if (!message.channel.topic) {
       return message.reply({
-        content: "<:rose_xMark:1488048189255716945> This channel does **not** have a valid ticket topic.",
+        content: "<:rose_xMark:1486977010143199382> This channel does **not** have a valid ticket topic.",
         allowedMentions: { repliedUser: false }
       });
     }
 
     if (!/^\d+$/.test(message.channel.topic)) {
       return message.reply({
-        content: "<:rose_xMark:1488048189255716945> This is not a valid **ticket** channel.",
+        content: "<:rose_xMark:1486977010143199382> You can **only** rename **ticket** channels.",
         allowedMentions: { repliedUser: false }
       });
     }
@@ -34,7 +34,7 @@ module.exports = {
 
     if (!newName) {
       return message.reply({
-        content: "<:rose_xMark:1488048189255716945> **Failed** to detect a valid **channel name**.",
+        content: "<:rose_xMark:1486977010143199382> **Failed** to detect a valid **channel name**.",
         allowedMentions: { repliedUser: false }
       });
     }
@@ -50,7 +50,7 @@ module.exports = {
       "components": [
         {
           "type": 10,
-          "content": `<:rose_check:1488048137355526304> Successfully renamed ticket to \`${newName}\`.`
+          "content": `<:rose_Check:1486976983555379330> Successfully renamed ticket to \`${newName}\`.`
         },
         {
           "type": 14,

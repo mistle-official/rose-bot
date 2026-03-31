@@ -20,7 +20,7 @@ module.exports = {
 
     if (existing) {
       return interaction.reply({
-        content: `<:rose_xMark:1488048189255716945> You already have an open **ticket**: ${existing}`,
+        content: `<:rose_xMark:1486977010143199382> You already have an open **ticket**: ${existing}`,
         flags: 64
       });
     }
@@ -29,7 +29,7 @@ module.exports = {
 
     if (!staffRole) {
       return interaction.reply({
-        content: "<:rose_xMark:1488048189255716945> **Failed** to find the configured staff role.",
+        content: "<:rose_xMark:1486977010143199382> **Failed** to find the configured staff role.",
         flags: 64
       });
     }
@@ -76,7 +76,7 @@ module.exports = {
           "components": [
             {
               "type": 10,
-              "content": `<:rose_check:1488048137355526304> Your claim ticket has been created successfully: ${channel}`
+              "content": `<:rose_Check:1486976983555379330> Your claim ticket has been created successfully: ${channel}`
             },
             {
               "type": 14,

@@ -60,7 +60,7 @@ module.exports = {
 
     if (!isAdmin && !hasRole) {
       return message.reply({
-        content: "<:rose_xMark:1488048189255716945> You do **not** have **permission** to use this command.",
+        content: "<:rose_xMark:1486977010143199382> You do **not** have **permission** to use this command.",
         allowedMentions: { repliedUser: false }
       });
     }

@@ -41,12 +41,12 @@ module.exports = {
 
       if (interaction.replied || interaction.deferred) {
         await interaction.followUp({
-          content: "<:rose_xMark:1488048189255716945> An **error** occurred while processing this interaction.",
+          content: "<:rose_xMark:1486977010143199382> An **error** occured.",
           flags: 64
         }).catch(() => {});
       } else {
         await interaction.reply({
-          content: "<:rose_xMark:1488048189255716945> An **error** occurred while processing this interaction.",
+          content: "<:rose_xMark:1486977010143199382> An **error** occured.",
           flags: 64
         }).catch(() => {});
       }
