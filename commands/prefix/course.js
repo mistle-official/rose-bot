@@ -71,7 +71,7 @@ module.exports = {
     ]);
 
     const logChannel = message.guild.channels.cache.get(LOG_CHANNEL_ID);
-    if (!channel) return;
+    if (!logChannel) return;
 
     await logChannel.send({
   "flags": 32768,
