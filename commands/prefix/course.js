@@ -7,25 +7,22 @@ module.exports = {
     // ============ CONFIG ============
     const REQUIRED_ROLE_ID = "1466269101260411013";
     const TARGET_CHANNEL_ID = "1452801200113320037";
+    const LOG_CHANNEL_ID = "1487544231617630209";
 
     const COURSE_STUDENT_ROLE = "1466311767771578388";
 
     const COURSE_ROLES = {
       graphics: "1466311768543592580",
       coding: "1466496048599142715",
-      els: "1466312439644684451",
       livery: "1466312437971292262",
       clothing: "1466312437505724582",
-      photography: "1466312439619387482"
     };
 
     const COURSE_DISPLAY_NAMES = {
       graphics: "Graphics",
       coding: "Coding",
-      els: "ELS",
       livery: "Livery",
       clothing: "Clothing",
-      photography: "Photography"
 };
 
     // ================================
@@ -73,6 +70,24 @@ module.exports = {
       courseRoleId
     ]);
 
+    const logChannel = message.guild.channels.cach.get(LOG_CHANNEL_ID);
+    if (!channel) return;
+
+    await logChannel.send({
+  "flags": 32768,
+  "components": [
+    {
+      "type": 17,
+      "components": [
+        {
+          "type": 10,
+          "content": `<@${userId}> has been enrolled in the **${displayCourse} Course**.`
+        }
+      ]
+    }
+  ]
+})
+
     // ===== EMBED LOG =====
     const channel = message.guild.channels.cache.get(TARGET_CHANNEL_ID);
     if (!channel) return;
@@ -86,7 +101,15 @@ module.exports = {
       "components": [
         {
           "type": 10,
-          "content": `## Course Purchase\nThank you <@${userId}> for purchasing the **${displayCourse} Course**. We hope you enjoy your course experience.`
+          "content": "# Course Purchase\n"
+        },
+        {
+          "type": 14,
+          "spacing": 2
+        },
+        {
+          "type": 10,
+          "content": `Thank you <@${userId}> for purchasing the **${displayCourse} Course**. We hope you enjoy your course experience.`
         },
         {
           "type": 14,
