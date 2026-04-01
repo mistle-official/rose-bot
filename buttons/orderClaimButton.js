@@ -11,8 +11,8 @@ module.exports = {
       });
     }
 
-    const isAdmin = message.member.permissions.has("Administrator");
-    const hasRole = message.member.roles.cache.has(CLAIM_ROLE_ID);
+    const isAdmin = interaction.member.permissions.has("Administrator");
+    const hasRole = interaction.member.roles.cache.has(CLAIM_ROLE_ID);
 
     if (!isAdmin && !hasRole) {
       return message.reply("<:rose_xMark:1486977010143199382> You do **not** have **permission** to use this command.");
