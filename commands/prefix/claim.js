@@ -4,6 +4,10 @@ module.exports = {
   name: "claim",
 
   async execute(message) {
+    if (!message.channel.topic || !message.channel.topic.startsWith("order-")) {
+      return message.reply("<:rose_xMark:1486977010143199382> This command can only be used in **order tickets**.");
+    }
+
     if (!message.member.roles.cache.has(CLAIM_ROLE_ID)) {
       return message.reply("<:rose_xMark:1486977010143199382> You do **not** have **permission** to claim orders.");
     }
@@ -16,19 +20,23 @@ module.exports = {
     );
 
     if (!panelMessage) {
-      return message.reply("<:rose_xMark:1486977010143199382> **Failed** to **fetch** order panel.");
+      return message.reply("<:rose_xMark:1486977010143199382> No active order panel found in this ticket.");
     }
 
     const updatedComponents = JSON.parse(JSON.stringify(panelMessage.components));
 
-    for (const row of updatedComponents) {
-      if (!row.components) continue;
+    for (const container of updatedComponents) {
+      if (!container.components) continue;
 
-      for (const component of row.components) {
-        if (component.custom_id === "p_286363526753161218") {
-          component.label = "Claimed";
-          component.disabled = true;
-          component.style = 3;
+      for (const item of container.components) {
+        if (item.type === 1 && Array.isArray(item.components)) {
+          for (const component of item.components) {
+            if (component.custom_id === "p_286363526753161218") {
+              component.label = "Claimed";
+              component.disabled = true;
+              component.style = 3;
+            }
+          }
         }
       }
     }
@@ -45,7 +53,7 @@ module.exports = {
           "components": [
             {
               "type": 10,
-              "content": `<:rose_Check:1486976983555379330> Your order has been claimed by ${message.author}.`
+              "content": `<:rose_Check:1486976983555379330> ${message.author} has claimed this order.`
             }
           ]
         }

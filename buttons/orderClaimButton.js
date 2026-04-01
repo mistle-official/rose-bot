@@ -4,23 +4,34 @@ module.exports = {
   customId: "p_286363526753161218",
 
   async execute(interaction) {
+    if (!interaction.channel.topic || !interaction.channel.topic.startsWith("order-")) {
+      return interaction.reply({
+        content: "<:rose_xMark:1486977010143199382> This button can only be used in **order tickets**.",
+        flags: 64
+      });
+    }
+
     if (!interaction.member.roles.cache.has(CLAIM_ROLE_ID)) {
       return interaction.reply({
         content: "<:rose_xMark:1486977010143199382> You do **not** have **permission** to claim orders.",
-        ephemeral: true
+        flags: 64
       });
     }
 
     const updatedComponents = JSON.parse(JSON.stringify(interaction.message.components));
 
-    for (const row of updatedComponents) {
-      if (!row.components) continue;
+    for (const container of updatedComponents) {
+      if (!container.components) continue;
 
-      for (const component of row.components) {
-        if (component.custom_id === "p_286363526753161218") {
-          component.label = "Claimed";
-          component.disabled = true;
-          component.style = 3;
+      for (const item of container.components) {
+        if (item.type === 1 && Array.isArray(item.components)) {
+          for (const component of item.components) {
+            if (component.custom_id === "p_286363526753161218") {
+              component.label = "Claimed";
+              component.disabled = true;
+              component.style = 3;
+            }
+          }
         }
       }
     }
@@ -37,7 +48,7 @@ module.exports = {
           "components": [
             {
               "type": 10,
-              "content": `<:rose_Check:1486976983555379330> Your order has been claimed by ${interaction.user}.`
+              "content": `<:rose_Check:1486976983555379330> ${interaction.user} has claimed this order.`
             }
           ]
         }
