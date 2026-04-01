@@ -164,7 +164,7 @@ module.exports = {
 
     if (selected === "ZgLFV3EjJn") {
       return interaction.reply({
-        "flags": 32768,
+        "flags": 32832,
         "components": [
           {
             "type": 17,
@@ -195,7 +195,7 @@ module.exports = {
 
     if (selected === "XkhrSpToFM") {
       return interaction.reply({
-        "flags": 32768,
+        "flags": 32832,
         "components": [
           {
             "type": 17,
@@ -226,7 +226,7 @@ module.exports = {
 
     if (selected === "Q9WQ7lUW8w") {
       return interaction.reply({
-        "flags": 32768,
+        "flags": 32832,
         "components": [
           {
             "type": 17,
@@ -257,7 +257,7 @@ module.exports = {
 
     if (selected === "ReTPQ65q1n") {
       return interaction.reply({
-        "flags": 32768,
+        "flags": 32832,
         "components": [
           {
             "type": 17,
@@ -288,7 +288,7 @@ module.exports = {
 
     if (selected === "dc65ZALgXP") {
       return interaction.reply({
-        "flags": 32768,
+        "flags": 32832,
         "components": [
           {
             "type": 17,
