@@ -16,20 +16,7 @@ module.exports = {
         return;
       }
 
-      if (interaction.isStringSelectMenu()) {
-  console.log("MENU CLICKED:", interaction.customId, interaction.values);
-
-  const menu = client.menus.get(interaction.customId);
-  if (!menu) {
-    console.log("MENU NOT FOUND:", interaction.customId);
-    return;
-  }
-
-  await menu.execute(interaction);
-  return;
-}
-
-      if (interaction.isModalSubmit()) {
+if (interaction.isModalSubmit()) {
   if (interaction.customId.startsWith("order_modal_")) {
     const modal = require("../modals/orderModal");
     await modal.execute(interaction);
@@ -41,6 +28,15 @@ module.exports = {
   await modal.execute(interaction);
   return;
 }
+      if (interaction.isModalSubmit()) {
+        const modal = client.modals.get(interaction.customId);
+        if (!modal) return;
+        await modal.execute(interaction);
+        return;
+      }
+
+    } catch (error) {
+      console.error(error);
 
       if (interaction.replied || interaction.deferred) {
         await interaction.followUp({
