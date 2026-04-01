@@ -6,7 +6,7 @@ module.exports = {
 
     const latency = message.client.ws.ping;
 
-    await message.channel.send({
+    await message.reply({
       "flags": 32768,
       "components": [
         {
