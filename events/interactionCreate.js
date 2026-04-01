@@ -30,14 +30,17 @@ module.exports = {
 }
 
       if (interaction.isModalSubmit()) {
-        const modal = client.modals.get(interaction.customId);
-        if (!modal) return;
-        await modal.execute(interaction);
-        return;
-      }
+  if (interaction.customId.startsWith("order_modal_")) {
+    const modal = require("../modals/orderModal");
+    await modal.execute(interaction);
+    return;
+  }
 
-    } catch (error) {
-      console.error(error);
+  const modal = client.modals.get(interaction.customId);
+  if (!modal) return;
+  await modal.execute(interaction);
+  return;
+}
 
       if (interaction.replied || interaction.deferred) {
         await interaction.followUp({
