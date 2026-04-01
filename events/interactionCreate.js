@@ -17,19 +17,27 @@ module.exports = {
       }
 
       if (interaction.isStringSelectMenu()) {
-  console.log("MENU CLICKED:", interaction.customId, interaction.values);
+        console.log("MENU CLICKED:", interaction.customId, interaction.values);
 
-  const menu = client.menus.get(interaction.customId);
-  if (!menu) {
-    console.log("MENU NOT FOUND:", interaction.customId);
-    return;
-  }
+        const menu = client.menus.get(interaction.customId);
+        if (!menu) {
+          console.log("MENU NOT FOUND:", interaction.customId);
+          return;
+        }
 
-  await menu.execute(interaction);
-  return;
-}
+        await menu.execute(interaction);
+        return;
+      }
 
       if (interaction.isModalSubmit()) {
+        console.log("MODAL SUBMITTED:", interaction.customId);
+
+        if (interaction.customId.startsWith("order_modal_")) {
+          const modal = require("../modals/orderModal");
+          await modal.execute(interaction);
+          return;
+        }
+
         const modal = client.modals.get(interaction.customId);
         if (!modal) return;
         await modal.execute(interaction);
@@ -37,7 +45,7 @@ module.exports = {
       }
 
     } catch (error) {
-      console.error(error);
+      console.error("interactionCreate error:", error);
 
       if (interaction.replied || interaction.deferred) {
         await interaction.followUp({
