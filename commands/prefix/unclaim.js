@@ -1,4 +1,4 @@
-const CLAIM_ROLE_ID = "CLAIM_ROLE_ID_HERE";
+const CLAIM_ROLE_IDS = [ "1477768302058143935", "1466269101260411013"] ;
 
 module.exports = {
   name: "unclaim",
@@ -8,8 +8,11 @@ module.exports = {
       return message.reply("<:rose_xMark:1486977010143199382> This command can only be used in **order tickets**.");
     }
 
-    if (!message.member.roles.cache.has(CLAIM_ROLE_ID)) {
-      return message.reply("<:rose_xMark:1486977010143199382> You do **not** have **permission** to unclaim orders.");
+    const isAdmin = message.member.permissions.has("Administrator");
+    const hasRole = message.member.roles.cache.has(CLAIM_ROLE_IDS);
+
+    if (!isAdmin && !hasRole) {
+      return message.reply("<:rose_xMark:1486977010143199382> You do **not** have **permission** to use this command.");
     }
 
     const messages = await message.channel.messages.fetch({ limit: 25 });

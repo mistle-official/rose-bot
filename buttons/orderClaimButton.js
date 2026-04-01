@@ -11,12 +11,13 @@ module.exports = {
       });
     }
 
-    if (!interaction.member.roles.cache.has(CLAIM_ROLE_ID)) {
-      return interaction.reply({
-        content: "<:rose_xMark:1486977010143199382> You do **not** have **permission** to claim orders.",
-        flags: 64
-      });
+    const isAdmin = message.member.permissions.has("Administrator");
+    const hasRole = message.member.roles.cache.has(CLAIM_ROLE_ID);
+
+    if (!isAdmin && !hasRole) {
+      return message.reply("<:rose_xMark:1486977010143199382> You do **not** have **permission** to use this command.");
     }
+
 
     const updatedComponents = JSON.parse(JSON.stringify(interaction.message.components));
 
