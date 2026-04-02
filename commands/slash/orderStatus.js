@@ -101,35 +101,8 @@ module.exports = {
   "flags": 32768,
   "components": [
     {
-      "type": 17,
-      "components": [
-        {
-          "type": 10,
-          "content": "# Order Status\n-# <@&1319810380783943822>"
-        },
-        {
-          "type": 14,
-          "spacing": 2
-        },
-        {
-          "type": 10,
-          "content": `**Graphics**: ${graphics}\n**Clothing** ${clothing}\n**Liveries** ${liveries}\n**Discord**: ${discord}\n**Development**: ${development}`
-        },
-        {
-          "type": 14,
-          "spacing": 2
-        },
-        {
-          "type": 12,
-          "items": [
-            {
-              "media": {
-                "url": "https://media.discordapp.net/attachments/1488365406069588159/1488367090221187212/Screenshot_2026-03-29_221112.png?ex=69ce7f9e&is=69cd2e1e&hm=5f78bfdba1de845cd74748cd55b416618f60c61aa55cc3f6ac740cef53efdc1e&=&format=webp&quality=lossless"
-              }
-            }
-          ]
-        }
-      ]
+      "type": 10,
+      "content": `# Order Status\n-# <@&1319810380783943822>\n\n**Graphics**: ${graphics}\n**Clothing** ${clothing}\n**Liveries** ${liveries}\n**Discord**: ${discord}\n**Development**: ${development}`
     }
   ]
 });
